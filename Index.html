@@ -30,7 +30,6 @@
     <nav>
         <a href="index.html">Home</a>
         <a href="https://drive.google.com/drive/folders/1jIUkNOovTV4dqhwQYBNHeu8WJA7576F9">Reference Material</a>
- 
     </nav>
 
     <!-- Main Title -->
@@ -54,6 +53,79 @@
                 <!-- Rows will be dynamically added here -->
             </tbody>
         </table> <br>
+
+        <h2> Course Structure </h2> 
+
+        <h3> Theory </h3>
+
+        <div>
+        <div1>
+        <a href="computer_networks.html"> Computer Networks </a><br>
+        <a href="database_management_system.html"> Database Management System </a><br>
+        <a href="design_and_analysis_of_algorithms.html"> Design and Analysis of Algorithms </a><br>
+        <a href="probability_and_statistics.html"> Probability and Statistics </a><br>
+        <a href=""> Indian Constitution </a>
+
+        </div1></div>
+
+
+        <h4> Marks Distribution </h4>
+        <table class="schedule-table">
+                    <thead>
+                        <tr>
+                
+                            <th>CCA 1</th>
+                            <th>Mid Sem</th>
+                    <th>CCA 2</th>
+                            <th>End Sem</th>
+                    <th> Total </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        
+                            <td> 15 </td>
+                            <td> 30 </td>
+                            <td> 15 </td>
+                            <td> 40 </td>
+                            <td> 100 </td>
+                    
+                
+                    </tbody>
+                </table> <br>
+
+        <h3> Lab </h3>
+
+        <div>
+        <div1 style="text-align:center;">
+        <a href=""> Computer Networks Lab </a><br>
+        <a href=""> Database Management System Lab </a><br>
+        <a href=""> Project Based Learning </a>
+        </div1></div>
+
+        <h4> Marks Distribution </h4>
+        <table class="schedule-table">
+                    <thead>
+                        <tr>
+                
+                            <th>LCA 1</th>
+                            <th>LCA 2</th>
+                    <th>LCA 3</th>
+                    <th> Total </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        
+                            <td> 33 </td>
+                            <td> 33 </td>
+                            <td> 33 </td>
+                            <td> 100 </td>
+                    
+                
+                    </tbody>
+                </table> 
+
     </section>
 
     <!-- Footer -->
@@ -62,104 +134,74 @@
     </footer>
 
     <script>
-        // Schedule data with unique reference links
-        let scheduleData = [
+        // Schedule data
+        const scheduleData = [
             {
                 subject: "MMA - Viva on Unit 1 <br> DS - Viva on Unit 4 <br> Peace Submission",
                 reference: [
-                    { text: "MMA", url: "https://example.com/mma" },
-                    { text: "DS", url: "https://example.com/ds" },
-                    { text: "Peace", url: "https://example.com/peace" },
+                    { text: "MMA", url: "https://drive.google.com/file/d/1SenolAqiIvSE7KifhC6pWlQrtUBcgBsI/view?usp=sharing" },
+                    { text: "DS", url: "study_material/subject3/assignment3.pdf" },
+                    { text: "Peace", url: "study_material/subject3/assignment3.pdf" }
                 ],
                 date: "2024-12-19"
             },
             {
                 subject: "DS - Assignment 3",
-                reference: [{ text: "PDF", url: "https://example.com/ds-assignment3" }],
-                date: "2024-12-19"
-            },
-            {
-                subject: "MMA - Assignment 6",
-                reference: [{ text: "PDF", url: "https://example.com/mma-assignment6" }],
+                reference: [{ text: "PDF", url: "study_material/subject2/assignment2.pdf" }],
                 date: "2024-12-20"
             },
             {
-                subject: "DS - Assignment 5",
-                reference: [{ text: "PDF", url: "https://example.com/ds-assignment5" }],
+                subject: "MMA - Assignment 6",
+                reference: [{ text: "PDF", url: "study_material/subject3/assignment3.pdf" }],
                 date: "2024-12-21"
             },
-	    {
-                subject: "Peace - Assignment 9",
-                reference: [{ text: "PDF", url: "https://example.com/ds-assignment5" }],
-                date: "2024-12-22"
-            },
-	{
-                subject: "MMA - Assignment 11",
-                reference: [{ text: "PDF", url: "https://example.com/ds-assignment5" }],
-                date: "2024-12-29"
-            },
+            {
+                subject: "DS - Assignment 5",
+                reference: [{ text: "PDF", url: "study_material/subject3/assignment3.pdf" }],
+                date: "2024-12-26"
+            }
         ];
 
         function updateSchedule() {
             const scheduleBody = document.getElementById('schedule-body');
-            scheduleBody.innerHTML = ''; // Clear previous rows
+            scheduleBody.innerHTML = ''; // Clear table
 
             const today = new Date();
             const todayISO = today.toISOString().split('T')[0];
             const tomorrowISO = new Date(today.getTime() + 24 * 60 * 60 * 1000).toISOString().split('T')[0];
 
-            // Keep tasks due today or tomorrow
-            const filteredData = scheduleData.filter((item) => new Date(item.date) >= new Date(todayISO));
+            // Filter for tasks due today or tomorrow
+            const filteredData = scheduleData.filter((task) => new Date(task.date) >= new Date(todayISO));
 
             if (filteredData.length === 0) {
-                // If no tasks remain, show a blank row with a dash
-                const emptyRow = document.createElement('tr');
-                emptyRow.classList.add('empty-row');
-                emptyRow.innerHTML = `
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
+                // If no tasks, show empty row with dashes
+                scheduleBody.innerHTML = `
+                    <tr class="empty-row">
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
                 `;
-                scheduleBody.appendChild(emptyRow);
                 return;
             }
 
-            filteredData.forEach((item) => {
+            // Populate tasks
+            filteredData.forEach((task) => {
                 const row = document.createElement('tr');
-                const subjectCell = document.createElement('td');
-                const dueCell = document.createElement('td');
-                const referenceCell = document.createElement('td');
-
-                // Subject
-                subjectCell.innerHTML = item.subject;
-
-                // Reference links
-                item.reference.forEach((ref) => {
-                    const link = document.createElement('a');
-                    link.href = ref.url;
-                    link.target = "_blank";
-                    link.textContent = ref.text;
-                    referenceCell.appendChild(link);
-                    referenceCell.appendChild(document.createElement('br')); // Add line break for multiple links
-                });
-
-                // Due Date and Class Assignment
-                if (item.date === todayISO) {
-                    dueCell.innerHTML = `<span class="today">Today</span>`;
-                } else if (item.date === tomorrowISO) {
-                    dueCell.innerHTML = `<span class="tomorrow">Tomorrow</span>`;
-                } else {
-                    dueCell.innerHTML = `<span class="future-date">${item.date}</span>`;
-                }
-
-                row.appendChild(subjectCell);
-                row.appendChild(dueCell);
-                row.appendChild(referenceCell);
+                row.innerHTML = `
+                    <td>${task.subject}</td>
+                    <td style="color:${task.date === todayISO ? 'red' : task.date === tomorrowISO ? 'orange' : 'lightgreen'};">
+                        ${task.date === todayISO ? '<b>Today</b>' : task.date === tomorrowISO ? '<b>Tomorrow</b>' : task.date}
+                    </td>
+                    <td>
+                        ${task.reference.map(ref => `<a href="${ref.url}" target="_blank">${ref.text}</a>`).join('<br>')}
+                    </td>
+                `;
                 scheduleBody.appendChild(row);
             });
         }
 
-        // Initial call to update the schedule
+        // Initialize
         updateSchedule();
     </script>
 </body>
