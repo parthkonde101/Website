@@ -3,40 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J Panel - About</title>
+    <title>Computer Networks | Panel J</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Center alignment styles */
+        .container {
+            text-align: center;
+        }
+        .nav-container {
+            justify-content: center;
+        }
+        .nav-links {
+            justify-content: center;
+        }
+        .unit-grid {
+            justify-content: center;
+        }
+        .unit-card {
+            text-align: center;
+        }
+        .unit-content {
+            text-align: left;
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        footer {
+            text-align: center;
+        }
+        .credits {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <nav>
-        <a href="index.html">Home</a>
+        <div class="container nav-container">
+            <div class="logo">Panel J</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="reference_material.html">Reference Material</a>
+            </div>
+        </div>
     </nav>
 
-    <!-- About Page -->
-    <section id="about">
+    <!-- Header -->
+    <header class="subject-header">
+        <div class="container">
+            <h1>Computer Networks</h1>
+            <p>Course materials and unit resources</p>
+        </div>
+    </header>
 
-<h2>Computer Networks </h2>
-
-<hr style="margin-top:40px">
-        <div style="line-height:100px;text-align:center;margin-top:50px;">
-        	<div2>
-        <a href="unavailable.pdf"> Unit 1 </a><br>
-        <a href="https://drive.google.com/file/d/1YUXUTQVUnjBwbUETXJoJabeixqpLSkVN/view?usp=sharing"> Unit 2 </a><br>
-        <a href="https://drive.google.com/file/d/1fSnMvmsXart3ETVpM3PTZP9aWtotec2g/view?usp=sharing"> Unit 3 </a><br>
-        <a href="unavailable.pdf"> Unit 4 </a><br>		
-	<a href="unavailable.pdf"> Unit 5 </a><br>
-        </div2>
-</div>
-
-
-
-    </section>
+    <!-- Main Content -->
+    <main class="container">
+        <section class="content-section">
+            <h2 class="section-title" style="text-align:left">Notes</h2>
+            
+            <div class="unit-grid">
+                <div class="unit-card">
+                    <h3>Unit 1</h3>
+                    <a href="unavailable.pdf" class="unit-link">Download Materials</a>
+                    <div class="status unavailable">Currently Unavailable</div>
+                </div>
+                
+                <div class="unit-card">
+                    <h3>Unit 2</h3>
+                    <a href="https://drive.google.com/file/d/1YUXUTQVUnjBwbUETXJoJabeixqpLSkVN/view?usp=sharing" class="unit-link">View on Google Drive</a>
+                    <div class="status available">Available</div>
+                </div>
+                
+                <div class="unit-card">
+                    <h3>Unit 3</h3>
+                    <a href="https://drive.google.com/file/d/1fSnMvmsXart3ETVpM3PTZP9aWtotec2g/view?usp=sharing" class="unit-link">View on Google Drive</a>
+                    <div class="status available">Available</div>
+                </div>
+                
+                <div class="unit-card">
+                    <h3>Unit 4</h3>
+                    <a href="unavailable.pdf" class="unit-link">Download Materials</a>
+                    <div class="status unavailable">Currently Unavailable</div>
+                </div>
+                
+                <div class="unit-card">
+                    <h3>Unit 5</h3>
+                    <a href="unavailable.pdf" class="unit-link">Download Materials</a>
+                    <div class="status unavailable">Currently Unavailable</div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 J Panel | All Rights Reserved</p>
+        <div class="container">
+            <div class="credits">
+                <p>Created & Managed by:</p>
+                <p><strong>Parth Konde</strong></p>
+                <p>Class Representative</p>
+            </div>
+            <p>&copy; 2024 Panel J | All Rights Reserved</p>
+        </div>
     </footer>
-
 </body>
 </html>
