@@ -3,54 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J Panel - About</title>
+    <title>Computer Networks | Panel J</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <nav>
-        <a href="index.html">Home</a>
-        <a href="reference_material.html"> Reference </a>
+        <div class="container nav-container">
+            <div class="logo">Panel J</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="reference_material.html">Reference Material</a>
+            </div>
+        </div>
     </nav>
 
-    <!-- About Page -->
-    <section id="about">
-        <h2>Computer Networks</h2>
-<h4 style="text-align:center;"> Dr. Aditi Jahagirdar </h4>
-<hr>
+    <!-- Header -->
+    <header class="subject-header">
+        <div class="container">
+            <h1>Computer Networks</h1>
+            <p class="instructor">Dr. Aditi Jahagirdar</p>
+        </div>
+    </header>
 
-<h4> Unit 1: Fundamentals of Networking and Data Communications </h4>
-        <ul><li>Analog Transmission: Analog-to-analog conversion,Digital-to-Analog conversion.</li> 
-<li>Digital Transmission: Digital-to-Digital conversion (line coding, block coding, scrambling), Analog-to-Digital conversion (Pulse Code Modulation, Delta Modulation)</li>
-<li>Introduction to Inter Networking Devices and Intra Networking. 
-<li>Network Topologies, Types of Networks, Network Architectures, Transmission media's, OSI Model, TCP/IP Reference Model, Ethernet standards</li></ul>
-
-<h4> Unit 2: Data Link Layer Services </h4>
-
-<ul><li>Types of errors, Block coding, Error Control: Cyclic Redundancy Check (CRC) Code, Hamming Code, Checksum, sliding window Protocols: Selective Repeat (SR) </li><li>Sliding window Protocols: Go Back N (GBN), Channel allocation, Multiple Access Protocols: ALOHA, CSMA/CD, CSMA/CA
-Ethernet Frame format</li></ul>
-
-<h4> Unit 3: Network Layer </h4>
-
-<ul><li> Services, Switching Techniques: Datagram Approach, Virtual-Circuit Approach, Internet Protocol:IPV4 & IPV6, Classful Addressing, Classless Addressing, CIDR, Subnetting, NAT, ICMP, ARP, RARP</li><li> Routing Algorithms: Distance Vectors (DV) Routing, Link State (LS) Routing, Routing in Internet: RIP, OSPF, BGP.</li></ul>
-
-<h4> Unit 4: Transport Layer </h4> 
-
-<ul><li>Services, Multiplexing, demultiplexing, Sockets, UDP, RTP, TCP: Services, Features, Segment, TCP Connection (Three-Way Handshake), Flow control and buffering</li><li> Silly window syndrome, Congestion Control, Congestion Control (Leaky Bucket, Token Bucket), Quality of Service (QoS)</li></ul>
-
-<h4> Unit 5: Application Layer </h4> 
-
-<ul><li>Dynamic Host control Protocol (DHCP), Hypertext Transfer Protocol (HTTP), FT, TELNET, SMTP,
-POP3, IMAP, MIME, Domain Name System (DNS), SNMP</li></ul>
-
-<hr style="margin-top:18px;">
-    </section>
+    <!-- Main Content -->
+    <main class="container">
+        <section class="content-section">
+            <div class="unit-container">
+                <!-- Unit 1 -->
+                <div class="unit-card">
+                    <h3 class="unit-title">Unit 1: Fundamentals of Networking and Data Communications</h3>
+                    <ul class="unit-content">
+                        <li>Analog Transmission: Analog-to-analog conversion, Digital-to-Analog conversion</li>
+                        <li>Digital Transmission: Digital-to-Digital conversion (line coding, block coding, scrambling), Analog-to-Digital conversion (Pulse Code Modulation, Delta Modulation)</li>
+                        <li>Introduction to Inter Networking Devices and Intra Networking</li>
+                        <li>Network Topologies, Types of Networks, Network Architectures, Transmission media's, OSI Model, TCP/IP Reference Model, Ethernet standards</li>
+                    </ul>
+                </div>
+                
+                <!-- Unit 2 -->
+                <div class="unit-card">
+                    <h3 class="unit-title">Unit 2: Data Link Layer Services</h3>
+                    <ul class="unit-content">
+                        <li>Types of errors, Block coding, Error Control: Cyclic Redundancy Check (CRC) Code, Hamming Code, Checksum, sliding window Protocols: Selective Repeat (SR)</li>
+                        <li>Sliding window Protocols: Go Back N (GBN), Channel allocation, Multiple Access Protocols: ALOHA, CSMA/CD, CSMA/CA, Ethernet Frame format</li>
+                    </ul>
+                </div>
+                
+                <!-- Unit 3 -->
+                <div class="unit-card">
+                    <h3 class="unit-title">Unit 3: Network Layer</h3>
+                    <ul class="unit-content">
+                        <li>Services, Switching Techniques: Datagram Approach, Virtual-Circuit Approach, Internet Protocol: IPV4 & IPV6, Classful Addressing, Classless Addressing, CIDR, Subnetting, NAT, ICMP, ARP, RARP</li>
+                        <li>Routing Algorithms: Distance Vectors (DV) Routing, Link State (LS) Routing, Routing in Internet: RIP, OSPF, BGP</li>
+                    </ul>
+                </div>
+                
+                <!-- Unit 4 -->
+                <div class="unit-card">
+                    <h3 class="unit-title">Unit 4: Transport Layer</h3>
+                    <ul class="unit-content">
+                        <li>Services, Multiplexing, demultiplexing, Sockets, UDP, RTP, TCP: Services, Features, Segment, TCP Connection (Three-Way Handshake), Flow control and buffering</li>
+                        <li>Silly window syndrome, Congestion Control, Congestion Control (Leaky Bucket, Token Bucket), Quality of Service (QoS)</li>
+                    </ul>
+                </div>
+                
+                <!-- Unit 5 -->
+                <div class="unit-card">
+                    <h3 class="unit-title">Unit 5: Application Layer</h3>
+                    <ul class="unit-content">
+                        <li>Dynamic Host control Protocol (DHCP), Hypertext Transfer Protocol (HTTP), FT, TELNET, SMTP, POP3, IMAP, MIME, Domain Name System (DNS), SNMP</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 J Panel | All Rights Reserved</p>
+        <div class="container">
+            <div class="credits">
+                <p>Created & Managed by:</p>
+                <p><strong>Parth Konde</strong></p>
+                <p>Class Representative</p>
+            </div>
+            <p>&copy; 2024 Panel J | All Rights Reserved</p>
+        </div>
     </footer>
-
 </body>
 </html>
