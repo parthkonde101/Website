@@ -3,51 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J Panel - About</title>
+    <title>Database Management System | Panel J</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <nav>
-        <a href="index.html">Home</a>
-        <a href="reference_material.html">Reference</a>
+        <div class="container nav-container">
+            <div class="logo">Panel J</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="reference_material.html">Reference Material</a>
+            </div>
+        </div>
     </nav>
 
-    <!-- About Page -->
-    <section id="about">
-        <h2>Database Management System</h2>
-<h4 style="text-align:center;"> Dr. Pradnya S. Kulkarni </h4>
-<hr>
+    <!-- Header -->
+    <header class="subject-header">
+        <div class="container">
+            <h1>Database Management System</h1>
+            <p class="instructor">Dr. Pradnya S. Kulkarni</p>
+        </div>
+    </header>
 
-<h4> Unit 1: Introduction to DBMS and Data Modelling </h4>
-        <ul><li>DBMS Vs File Systems, Database System Architecture, Database Architectures: Centralized, Client-Server, Parallel, Distributed, Data Abstraction, Data Independence</li>
-<li>Data Definition and Data Manipulation Languages, Data Models, E-R diagram: Components of E-R Model, Conventions, Keys, EER diagram Components, Reduce E-R diagram into Tables</li></ul>
-
-<h4> Unit 2: Relational Database Design and Normalisation </h4>
-
-<ul><li>Relational Model: Attributes, Tuple, Domain, CODD's rule Relational Integrity, Referential Integrities, Enterprise Constraints, Normalisation: INF, 2NF, 3NF, BCNF</li><li>Functional dependency, Decomposition Query Processing: Overview, Measures of Query cost, Selection and Join operations, Evaluation of Expressions.</li></ul>
-
-<h4> Unit 3: Relational Algebra and Database Programming </h4>
-
-<ul><li> Relational Algebra, Basic Operations, Relational calculus: Tuple Calculus, Domain Calculus, Introduction to SQL, Characteristics and advantages of SQL, SQL Data Types, DDL Commands, DCL Commands.</li><li> SQL Queries: DML Queries with Select Query Clauses, Creating, Modifying, Deleting.
-Views: Creating, Dropping, Updating, Indexes, SQL DML Queries, Set Operations</li><li>Predicates and Joins, set membership, Grouping and Aggregation, Aggregate Functions, Nested Queries</li></ul>
-
-<h4> Unit 4: Introduction to Programming in SQL (PL/SQL) </h4> 
-
-<ul><li>PL/SQL Concepts: Basic PL/SQL block, PL/SQL Functions and Procedures, Different modes in procedure, Difference between functions and procedures</li><li> Cursors, Database Triggers. Exception Handling in PL/SQL.Application of DBMS</li></ul>
-
-<h4> Unit 5: Relational Database Design and Normalisation </h4> 
-
-<ul><li>ACID properties, transactions, schedules and concurrent execution of transactions, serializability: View, Conflict.</li><li> Concurrency control lock-based protocol (simple, 2 phases: Rigorous 2 phase, Strict 2 phase), Cascade-less Schedule, Recoverable Schedule.</li><li>Deadlocks: Prevention Techniques (Wait Die, Wound Wait), Detection Techniques, Database Recovery: Failure classification Recovery and atomicity: Log-based recovery, Shadow paging.</li></ul>
-
-<hr style="margin-top:18px;">
-    </section>
+    <!-- Main Content -->
+    <main class="container">
+        <section class="content-section">
+            <div class="unit-container">
+                <!-- Unit 1 -->
+                <div class="unit-card">
+                    <h3 class="unit-title">Unit 1: Introduction to DBMS and Data Modelling</h3>
+                    <ul class="unit-content">
+                        <li>DBMS Vs File Systems, Database System Architecture, Database Architectures: Centralized, Client-Server, Parallel, Distributed, Data Abstraction, Data Independence</li>
+                        <li>Data Definition and Data Manipulation Languages, Data Models, E-R diagram: Components of E-R Model, Conventions, Keys, EER diagram Components, Reduce E-R diagram into Tables</li>
+                    </ul>
+                </div>
+                
+                <!-- Unit 2 -->
+                <div class="unit-card">
+                    <h3 class="unit-title">Unit 2: Relational Database Design and Normalisation</h3>
+                    <ul class="unit-content">
+                        <li>Relational Model: Attributes, Tuple, Domain, CODD's rule Relational Integrity, Referential Integrities, Enterprise Constraints, Normalisation: INF, 2NF, 3NF, BCNF</li>
+                        <li>Functional dependency, Decomposition Query Processing: Overview, Measures of Query cost, Selection and Join operations, Evaluation of Expressions</li>
+                    </ul>
+                </div>
+                
+                <!-- Unit 3 -->
+                <div class="unit-card">
+                    <h3 class="unit-title">Unit 3: Relational Algebra and Database Programming</h3>
+                    <ul class="unit-content">
+                        <li>Relational Algebra, Basic Operations, Relational calculus: Tuple Calculus, Domain Calculus, Introduction to SQL, Characteristics and advantages of SQL, SQL Data Types, DDL Commands, DCL Commands</li>
+                        <li>SQL Queries: DML Queries with Select Query Clauses, Creating, Modifying, Deleting</li>
+                        <li>Views: Creating, Dropping, Updating, Indexes, SQL DML Queries, Set Operations, Predicates and Joins, set membership, Grouping and Aggregation, Aggregate Functions, Nested Queries</li>
+                    </ul>
+                </div>
+                
+                <!-- Unit 4 -->
+                <div class="unit-card">
+                    <h3 class="unit-title">Unit 4: Introduction to Programming in SQL (PL/SQL)</h3>
+                    <ul class="unit-content">
+                        <li>PL/SQL Concepts: Basic PL/SQL block, PL/SQL Functions and Procedures, Different modes in procedure, Difference between functions and procedures</li>
+                        <li>Cursors, Database Triggers, Exception Handling in PL/SQL, Application of DBMS</li>
+                    </ul>
+                </div>
+                
+                <!-- Unit 5 -->
+                <div class="unit-card">
+                    <h3 class="unit-title">Unit 5: Relational Database Design and Normalisation</h3>
+                    <ul class="unit-content">
+                        <li>ACID properties, transactions, schedules and concurrent execution of transactions, serializability: View, Conflict</li>
+                        <li>Concurrency control lock-based protocol (simple, 2 phases: Rigorous 2 phase, Strict 2 phase), Cascade-less Schedule, Recoverable Schedule</li>
+                        <li>Deadlocks: Prevention Techniques (Wait Die, Wound Wait), Detection Techniques, Database Recovery: Failure classification Recovery and atomicity: Log-based recovery, Shadow paging</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 J Panel | All Rights Reserved</p>
+        <div class="container">
+            <div class="credits">
+                <p>Created & Managed by:</p>
+                <p><strong>Parth Konde</strong></p>
+                <p>Class Representative</p>
+            </div>
+            <p>&copy; 2024 Panel J | All Rights Reserved</p>
+        </div>
     </footer>
-
 </body>
 </html>
