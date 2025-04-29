@@ -3,144 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J Panel - Home</title>
+    <title>J Panel - Academic Hub</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .today {
-            color: red;
-            font-weight: bold;
-        }
-        .tomorrow {
-            color: orange;
-            font-weight: bold;
-        }
-        .future-date {
-            color: lightgreen;
-            font-weight: bold;
-        }
-        .empty-row {
-            text-align: center;
-            color: gray;
-        }
-    </style>
 </head>
 <body>
-
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <nav>
-        <a href="reference_material.html">Reference Material</a>
+        <div class="container nav-container">
+            <div class="logo">Panel J</div>
+            <div class="nav-links">
+                <a href="reference_material.html">Reference Material</a>
+            </div>
+        </div>
     </nav>
 
-    <!-- Main Title -->
+    <!-- Header -->
     <header>
-        <h1>Panel J</h1>
-        <p>Academic Hub</p>
+        <div class="container">
+            <h1>Academic Hub</h1>
+            <p>Your centralized resource for Study Material</p>
+        </div>
     </header>
 
-    <!-- Home Page - Schedule of Assignments -->
-    <section id="home">
-        <h2>Events & Submissions</h2>
-        <table class="schedule-table">
-            <thead>
-                <tr>
-                    <th>Subject</th>
-                    <th>Due</th>
-                    <th>Reference</th>
-                </tr>
-            </thead>
-            <tbody id="schedule-body">
-                <!-- Rows will be dynamically added here -->
-            </tbody>
-        </table> <br>
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Schedule Section -->
+        <section class="content-section">
+            <h2 class="section-title">Events & Submissions</h2>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Due</th>
+                        <th>Reference</th>
+                    </tr>
+                </thead>
+                <tbody id="schedule-body">
+                    <!-- Dynamic content will be inserted here -->
+                </tbody>
+            </table>
+        </section>
 
-        <h2> Course Structure </h2> 
+        <!-- Course Structure -->
+        <section class="content-section">
+            <h2 class="section-title">Course Structure</h2>
+            
+            <h3>Theory Courses</h3>
+            <div class="course-grid">
+                <div class="course-card">
+                    <a href="computer_networks.html">CN</a>
+                    <span>Computer Networks</span>
+                </div>
+                <div class="course-card">
+                    <a href="database_management_system.html">DBMS</a>
+                    <span>Database Management System</span>
+                </div>
+                <div class="course-card">
+                    <a href="design_and_analysis_of_algorithms.html">DAA</a>
+                    <span>Design & Analysis of Algorithms</span>
+                </div>
+                <div class="course-card">
+                    <a href="probability_and_statistics.html">PS</a>
+                    <span>Probability & Statistics</span>
+                </div>
+                <div class="course-card">
+                    <a href="indian_constitution.html">IC</a>
+                    <span>Indian Constitution</span>
+                </div>
+            </div>
 
-        <h3> Theory </h3>
+            <h4>Marks Distribution (Theory)</h4>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>CCA 1</th>
+                        <th>Mid Sem</th>
+                        <th>CCA 2</th>
+                        <th>End Sem</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>15</td>
+                        <td>30</td>
+                        <td>15</td>
+                        <td>40</td>
+                        <td>100</td>
+                    </tr>
+                </tbody>
+            </table>
+		<h4>Passing - 40% </h4>
+		<h4>Internal: CCA1 + CCA2 + Midsem = 24/60</h4>
+		<h4>End Sem: 16/40</h4>
 
-        <div>
-        <div1>
-        <a href="computer_networks.html"> CN </a><br>
-        <a href="database_management_system.html"> DBMS </a><br>
-        <a href="design_and_analysis_of_algorithms.html"> DAA </a><br>
-        <a href="probability_and_statistics.html"> PS </a><br>
-        <a href="indian_constitution.html"> IC </a>
+            <!--<h3 style="margin-top: 30px;">Lab Courses</h3>
+            <div class="course-grid">
+                <div class="course-card">
+                    <a href="computer_networks_lab.html">CN Lab</a>
+                    <span>Computer Networks Lab</span>
+                </div>
+                <div class="course-card">
+                    <a href="database_management_system_lab.html">DBMS Lab</a>
+                    <span>Database Lab</span>
+                </div>
+                <div class="course-card">
+                    <a href="project_based_learning_2.html">PBL II</a>
+                    <span>Project Based Learning</span>
+                </div>
+            </div>
 
-        </div1></div>
-
-
-        <h4> Marks Distribution </h4>
-        <table class="schedule-table">
-                    <thead>
-                        <tr>
-                
-                            <th>CCA 1</th>
-                            <th>Mid Sem</th>
-                    <th>CCA 2</th>
-                            <th>End Sem</th>
-                    <th> Total </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        
-                            <td> 15 </td>
-                            <td> 30 </td>
-                            <td> 15 </td>
-                            <td> 40 </td>
-                            <td> 100 </td>
-                    
-                
-                    </tbody>
-                </table> <br>
-
-        <h3> Lab </h3>
-
-        <div>
-        <div1 style="text-align:center;">
-        <a href="computer_networks_lab.html"> CN Lab </a><br>
-        <a href="database_management_system_lab.html"> DBMS Lab </a><br>
-        <a href="project_based_learning_2.html"> PBL II </a>
-        </div1></div>
-
-        <h4> Marks Distribution </h4>
-        <table class="schedule-table">
-                    <thead>
-                        <tr>
-                
-                            <th>LCA 1</th>
-                            <th>LCA 2</th>
-                    <th>LCA 3</th>
-                    <th> Total </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        
-                            <td> 33 </td>
-                            <td> 33 </td>
-                            <td> 33 </td>
-                            <td> 100 </td>
-                    
-                
-                    </tbody>
-                </table> 
-
-    </section>
+            <h4>Marks Distribution (Lab)</h4>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>LCA 1</th>
+                        <th>LCA 2</th>
+                        <th>LCA 3</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>33</td>
+                        <td>33</td>
+                        <td>33</td>
+                        <td>100</td>
+                    </tr>-->
+                </tbody>
+            </table>
+        </section>
+    </main>
 
     <!-- Footer -->
-
-    <credits style="text-align:center;">
-         <p>Created & Managed by:</p>
-        <p><strong>Parth Konde</strong></p>
-        <p> Class Representative </p>
-    </credits>
     <footer>
-        <p>&copy; 2024 Panel J | All Rights Reserved</p>
-       
+        <div class="container">
+            <div class="credits">
+                <p>Created & Managed by:</p>
+                <p><strong>Parth Konde</strong></p>
+                <p>Class Representative</p>
+            </div>
+            <p>&copy; 2024 Panel J | All Rights Reserved</p>
+        </div>
     </footer>
 
     <script>
-        // Schedule data
+        // Schedule data - same as your original
         const scheduleData = [
             {
                 subject: " ",
@@ -184,34 +193,60 @@
             scheduleBody.innerHTML = ''; // Clear table
 
             const today = new Date();
+            today.setHours(0, 0, 0, 0);
             const todayISO = today.toISOString().split('T')[0];
-            const tomorrowISO = new Date(today.getTime() + 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            const tomorrowISO = tomorrow.toISOString().split('T')[0];
 
-            // Filter for tasks due today or tomorrow
-            const filteredData = scheduleData.filter((task) => new Date(task.date) >= new Date(todayISO));
+            // Filter for tasks due today or in the future
+            const filteredData = scheduleData.filter(task => {
+                const taskDate = new Date(task.date);
+                taskDate.setHours(0, 0, 0, 0);
+                return taskDate >= today;
+            });
 
             if (filteredData.length === 0) {
-                // If no tasks, show empty row with dashes
                 scheduleBody.innerHTML = `
-                    <tr class="empty-row">
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
+                    <tr>
+                        <td colspan="3" style="text-align: center; color: var(--gray);">No upcoming assignments</td>
                     </tr>
                 `;
                 return;
             }
 
+            // Sort by date (earliest first)
+            filteredData.sort((a, b) => new Date(a.date) - new Date(b.date));
+
             // Populate tasks
-            filteredData.forEach((task) => {
+            filteredData.forEach(task => {
                 const row = document.createElement('tr');
+                
+                let dateCell;
+                if (task.date === todayISO) {
+                    dateCell = '<td class="today">Today</td>';
+                } else if (task.date === tomorrowISO) {
+                    dateCell = '<td class="tomorrow">Tomorrow</td>';
+                } else {
+                    // Format date as "Month Day, Year"
+                    const dateObj = new Date(task.date);
+                    const formattedDate = dateObj.toLocaleDateString('en-US', { 
+                        month: 'short', 
+                        day: 'numeric', 
+                        year: 'numeric' 
+                    });
+                    dateCell = `<td class="future-date">${formattedDate}</td>`;
+                }
+                
                 row.innerHTML = `
                     <td>${task.subject}</td>
-                    <td style="color:${task.date === todayISO ? 'red' : task.date === tomorrowISO ? 'orange' : 'lightgreen'};">
-                        ${task.date === todayISO ? '<b>Today</b>' : task.date === tomorrowISO ? '<b>Tomorrow</b>' : task.date}
-                    </td>
+                    ${dateCell}
                     <td>
-                        ${task.reference.map(ref => `<a href="${ref.url}" target="_blank">${ref.text}</a>`).join('<br>')}
+                        ${task.reference.map(ref => 
+                            `<a href="${ref.url}" target="_blank">
+                                ${ref.text}
+                            </a>`
+                        ).join('<br>')}
                     </td>
                 `;
                 scheduleBody.appendChild(row);
