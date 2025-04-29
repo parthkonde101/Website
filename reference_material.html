@@ -3,43 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J Panel - About</title>
+    <title>Reference Material | Panel J</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <nav>
-        <a href="index.html">Home</a>
+        <div class="container nav-container">
+            <div class="logo">Panel J</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="reference_material.html" class="active">Reference Material</a>
+            </div>
+        </div>
     </nav>
 
-    <!-- About Page -->
-    <section id="about">
+    <!-- Header -->
+    <header class="subject-header">
+        <div class="container">
+            <h1>Reference Material</h1>
+            <p>All course resources in one place</p>
+        </div>
+    </header>
 
-<h2>Reference Material</h2>
-
-<hr style="margin-top:40px">
-        <div style="line-height:70px;text-align:center;margin-top:50px;">
-        	<div2>
-        <a href="cn.html"> CN </a><br>
-        <a href="dbms.html"> DBMS </a><br>
-        <a href="daa.html"> DAA </a><br>
-        <a href="ps.html"> PS </a><br>
-<br>
-	  <a href="cnlab.html"> CN Lab </a><br>
-        <a href="dbmslab.html"> DBMS Lab </a><br>
-        <a href="pbl.html"> PBL II </a>
-        </div2>
-</div>
-
-
-
-    </section>
+    <!-- Main Content -->
+    <main class="container">
+        <section class="content-section">
+            <h2 class="section-title">Course Materials</h2>
+            
+            <div class="course-categories">
+                <!-- Theory Courses -->
+                <div class="category-card">
+                    <h3>Theory Courses</h3>
+                    <div class="course-links">
+                        <a href="cn.html" class="course-link">
+                            <span>Computer Networks</span>
+                            <span>CN</span>
+                        </a>
+                        <a href="dbms.html" class="course-link">
+                            <span>Database Management System</span>
+                            <span>DBMS</span>
+                        </a>
+                        <a href="daa.html" class="course-link">
+                            <span>Design & Analysis of Algorithms</span>
+                            <span>DAA</span>
+                        </a>
+                        <a href="ps.html" class="course-link">
+                            <span>Probability & Statistics</span>
+                            <span>PS</span>
+                        </a>
+                    </div>
+                </div>
+             
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 J Panel | All Rights Reserved</p>
+        <div class="container">
+            <div class="credits">
+                <p>Created & Managed by:</p>
+                <p><strong>Parth Konde</strong></p>
+                <p>Class Representative</p>
+            </div>
+            <p>&copy; 2024 Panel J | All Rights Reserved</p>
+        </div>
     </footer>
-
 </body>
 </html>
