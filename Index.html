@@ -204,9 +204,8 @@
 
             // Filter for tasks due today or in the future
             const filteredData = scheduleData.filter(task => {
-                const taskDate = new Date(task.date);
-                taskDate.setHours(0, 0, 0, 0);
-                return taskDate >= today;
+                const [year, month, day] = task.date.split("-");
+		const taskDate = new Date(year, month - 1, day);
             });
 
             if (filteredData.length === 0) {
@@ -226,7 +225,11 @@
                 const row = document.createElement('tr');
                 
                 let dateCell;
-                if (task.date === todayISO) {
+                const [y, m, d] = task.date.split("-");
+		const taskDate = new Date(y, m - 1, d);
+		const taskDateISO = taskDate.toISOString().split('T')[0];
+
+		if (taskDateISO === todayISO) {
                     dateCell = '<td class="today">Today</td>';
                 } else if (task.date === tomorrowISO) {
                     dateCell = '<td class="tomorrow">Tomorrow</td>';
