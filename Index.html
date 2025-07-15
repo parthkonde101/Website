@@ -163,7 +163,7 @@
             },
             {
                 subject: "AIES Lab - Assignment 1",
-                reference: [{ text: "Link", url: "unavailable.pdf" }],
+                reference: [{ text: "PDF", url: "unavailable.pdf" }],
                 date: "2025-07-18"
             },
             {
@@ -204,8 +204,9 @@
 
             // Filter for tasks due today or in the future
             const filteredData = scheduleData.filter(task => {
-                const [year, month, day] = task.date.split("-");
-		const taskDate = new Date(year, month - 1, day);
+                const taskDate = new Date(task.date);
+                taskDate.setHours(0, 0, 0, 0);
+                return taskDate >= today;
             });
 
             if (filteredData.length === 0) {
@@ -225,11 +226,7 @@
                 const row = document.createElement('tr');
                 
                 let dateCell;
-                const [y, m, d] = task.date.split("-");
-		const taskDate = new Date(y, m - 1, d);
-		const taskDateISO = taskDate.toISOString().split('T')[0];
-
-		if (taskDateISO === todayISO) {
+                if (task.date === todayISO) {
                     dateCell = '<td class="today">Today</td>';
                 } else if (task.date === tomorrowISO) {
                     dateCell = '<td class="tomorrow">Tomorrow</td>';
