@@ -154,110 +154,110 @@
     </footer>
 
     <script>
-        // Schedule data - same as your original
-        const scheduleData = [
-            {
-                subject: "PBL III - Assignment 1",
-                reference: [{ text: "PDF", url: "unavailable.pdf" }],
-                date: "2025-07-16"
-            },
-            {
-                subject: "AIES Lab - Assignment 1",
-                reference: [{ text: "PDF", url: "unavailable.pdf" }],
-                date: "2025-07-17"
-            },
-            {
-                subject: "DBMS",
-                reference: [
-                    { text: "Link", url: "dbms.html" }
-                ],
-                date: "2025-05-30"
-            },
-            {
-                subject: "DAA",
-                reference: [{ text: "Link", url: "daa.html" }],
-                date: "2025-06-02"
-            },
-            {
-                subject: "CN",
-                reference: [{ text: "Link", url: "cn.html" }
-                           ],
-                date: "2025-06-04"
-            },
-            {
-                subject: "DBMSL - Assignment 3",
-                reference: [{ text: "PDF", url: "https://drive.google.com/file/d/10lDWQxnLqe5EEz2QFx1BNOF_1rG4verd/view?usp=sharing" }],
-                date: "2025-02-08"
-            }
-        ];
+    const scheduleData = [
+        {
+            subject: "AIES Lab - Assignment 1",
+            reference: [{ text: "PDF", url: "unavailable.pdf" }],
+            date: "2025-07-18"
+        },
+        {
+            subject: " AIES - Task",
+            reference: [{ text: "PDF", url: "unavailable.pdf" }],
+            date: "2025-07-21"
+        },
+        {
+            subject: "DBMS - Assignment 4<br>DBMS - Assignment 5",
+            reference: [
+                { text: "PDF", url: "https://drive.google.com/file/d/1C9iv7v2QdqqjsaTSnAMWfCO3UxeiU803/view?usp=sharing" },
+                { text: "PDF", url: "https://drive.google.com/file/d/1npA8VPsG1QiEbjgocdZa7Tif_VO5y7mn/view?usp=sharing" }
+            ],
+            date: "2025-02-28"
+        },
+        {
+            subject: "CN - Assignment 7",
+            reference: [{ text: "PDF", url: "https://drive.google.com/file/d/1k1h9uuaMLh9McMdN4v4knoCRLsKRb-FB/view?usp=sharing" }],
+            date: "2025-03-03"
+        },
+        {
+            subject: "CNL - Assignment 3<br>DBMSL - Assignment 2",
+            reference: [
+                { text: "PDF", url: "https://drive.google.com/file/d/17t9ani6lAfHDXilnKbSIx4lsm_hrGa62/view?usp=sharing" },
+                { text: "PDF", url: "https://drive.google.com/file/d/1yU0JxzeDmfvgnVRwetJ9egljD_UF7q3C/view?usp=sharing" }
+            ],
+            date: "2025-01-31"
+        },
+        {
+            subject: "DBMSL - Assignment 3",
+            reference: [{ text: "PDF", url: "https://drive.google.com/file/d/10lDWQxnLqe5EEz2QFx1BNOF_1rG4verd/view?usp=sharing" }],
+            date: "2025-02-08"
+        }
+    ];
 
-        function updateSchedule() {
-            const scheduleBody = document.getElementById('schedule-body');
-            scheduleBody.innerHTML = ''; // Clear table
+    // Helper to safely parse date strings (e.g., "2025-07-18") into local Date objects
+    function parseLocalDate(dateString) {
+        const [year, month, day] = dateString.split('-').map(Number);
+        return new Date(year, month - 1, day); // month is 0-based
+    }
 
-            const today = new Date();
-            today.setHours(0, 0, 0, 0);
-            const todayISO = today.toISOString().split('T')[0];
-            const tomorrow = new Date(today);
-            tomorrow.setDate(tomorrow.getDate() + 1);
-            const tomorrowISO = tomorrow.toISOString().split('T')[0];
+    function updateSchedule() {
+        const scheduleBody = document.getElementById('schedule-body');
+        scheduleBody.innerHTML = '';
 
-            // Filter for tasks due today or in the future
-            const filteredData = scheduleData.filter(task => {
-                const taskDate = new Date(task.date);
-                taskDate.setHours(0, 0, 0, 0);
-                return taskDate >= today;
-            });
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
 
-            if (filteredData.length === 0) {
-                scheduleBody.innerHTML = `
-                    <tr>
-                        <td colspan="3" style="text-align: center; color: var(--gray);">No upcoming assignments</td>
-                    </tr>
-                `;
-                return;
-            }
+        const tomorrow = new Date(today);
+        tomorrow.setDate(today.getDate() + 1);
 
-            // Sort by date (earliest first)
-            filteredData.sort((a, b) => new Date(a.date) - new Date(b.date));
+        const filteredData = scheduleData.filter(task => {
+            const taskDate = parseLocalDate(task.date);
+            return taskDate >= today;
+        });
 
-            // Populate tasks
-            filteredData.forEach(task => {
-                const row = document.createElement('tr');
-                
-                let dateCell;
-                if (task.date === todayISO) {
-                    dateCell = '<td class="today">Today</td>';
-                } else if (task.date === tomorrowISO) {
-                    dateCell = '<td class="tomorrow">Tomorrow</td>';
-                } else {
-                    // Format date as "Month Day, Year"
-                    const dateObj = new Date(task.date);
-                    const formattedDate = dateObj.toLocaleDateString('en-US', { 
-                        month: 'short', 
-                        day: 'numeric', 
-                        year: 'numeric' 
-                    });
-                    dateCell = `<td class="future-date">${formattedDate}</td>`;
-                }
-                
-                row.innerHTML = `
-                    <td>${task.subject}</td>
-                    ${dateCell}
-                    <td>
-                        ${task.reference.map(ref => 
-                            `<a href="${ref.url}" target="_blank">
-                                ${ref.text}
-                            </a>`
-                        ).join('<br>')}
-                    </td>
-                `;
-                scheduleBody.appendChild(row);
-            });
+        if (filteredData.length === 0) {
+            scheduleBody.innerHTML = `
+                <tr>
+                    <td colspan="3" style="text-align: center; color: var(--gray);">No upcoming assignments</td>
+                </tr>
+            `;
+            return;
         }
 
-        // Initialize
-        updateSchedule();
-    </script>
+        filteredData.sort((a, b) => parseLocalDate(a.date) - parseLocalDate(b.date));
+
+        filteredData.forEach(task => {
+            const row = document.createElement('tr');
+            const taskDate = parseLocalDate(task.date);
+
+            let dateCell = '';
+            if (taskDate.getTime() === today.getTime()) {
+                dateCell = '<td class="today">Today</td>';
+            } else if (taskDate.getTime() === tomorrow.getTime()) {
+                dateCell = '<td class="tomorrow">Tomorrow</td>';
+            } else {
+                const formatted = taskDate.toLocaleDateString('en-US', {
+                    month: 'short',
+                    day: 'numeric',
+                    year: 'numeric'
+                });
+                dateCell = `<td class="future-date">${formatted}</td>`;
+            }
+
+            row.innerHTML = `
+                <td>${task.subject}</td>
+                ${dateCell}
+                <td>
+                    ${task.reference.map(ref =>
+                        `<a href="${ref.url}" target="_blank">${ref.text}</a>`
+                    ).join('<br>')}
+                </td>
+            `;
+            scheduleBody.appendChild(row);
+        });
+    }
+
+    // Wait for DOM to load before running update
+    document.addEventListener('DOMContentLoaded', updateSchedule);
+</script>
 </body>
 </html>
